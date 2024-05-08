@@ -24,10 +24,9 @@ const Project = g.model('Project', {
   liveSiteUrl: g.url(), 
   githubUrl: g.url(), 
   category: g.string(),
-  createdBy: g.string(), // Changed to a simple string field
+  projects: g.string().list().optional(), // Changed to a list of strings
 }).auth((rules: AuthRules) => {
   rules.public().read()
-  rules.private().create().delete().update()
 })
 
 const jwt = auth.JWT({
