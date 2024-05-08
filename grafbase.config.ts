@@ -23,7 +23,7 @@ const Project = g.model('Project', {
   image: g.url(),
   liveSiteUrl: g.url(), 
   githubUrl: g.url(), 
-  category: g.string().search(),
+  category: g.string().Search(),
   createdBy: g.relation(() => User),
 }).auth((rules: AuthRules) => {
   rules.public().read()
